@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class List</title>
+</head>
+<body>
+    <h1>Classes</h1>
+    <ul>
+        {% for classes in classes %}
+            <li><a href="{% url 'LW:subject_list' classes.id %}">{{ classes.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
