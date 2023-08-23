@@ -1,14 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Subject List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'LW/style1.css' %}">
 </head>
 <body>
-    <h1>Subjects for {{ classes.name }}</h1>
-    <ul>
+    <div class="subject-list-container">
         {% for subject in subjects %}
-            <li><a href="{% url 'LW:topic_list' subject.id %}">{{ subject.name }}</a></li>
+            <div class="subject-card">
+                <h2>{{ subject.name }}</h2>
+                <a href="{% url 'LW:topic_list' subject.id %}" class="button">View Topics</a>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 </html>

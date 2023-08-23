@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+</head>
+<body>
+    <div class="topic-detail-container">
+        <div class="topic-detail">
+            <h2>{{ selected_topic.name }}</h2>
+            <p>{{ selected_topic.subject.name }} - {{ selected_topic.classes.name }}</p>
+            <div class="topic-content">
+                <p>{{ selected_topic.content }}</p>
+            </div>
+            {% if selected_topic.image %}
+                <img src="{{ selected_topic.image.url }}" alt="{{ selected_topic.name }}">
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

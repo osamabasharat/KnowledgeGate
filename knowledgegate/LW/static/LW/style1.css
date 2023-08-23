@@ -1,0 +1,211 @@
+/* Reset some default margin and padding */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the content */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:  #FFF0E5;
+}
+
+/* Style the class card container */
+.class-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    padding: 20px;
+    background-color:  #FFF0E5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the class card */
+.class-card {
+    flex: 1;
+    padding: 20px;
+    background-color:  #e8e5ff;
+    border-radius: 8px;
+    text-align: center;
+}
+.class-card img {
+    max-width: 50%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+/* Style the button */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Add the shared CSS from the previous example */
+
+/* .topic-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.topic-card {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.topic-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.topic-card p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.topic-content {
+    margin-top: 20px;
+}
+
+.topic-content p {
+    margin: 10px 0;
+}
+
+.topic-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+} */
+/* Add the shared CSS from the previous examples */
+
+.topic-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.topic-card {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.topic-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.topic-card p {
+    margin: 10px 0;
+    color: #777;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flexbox styles */
+.class-list-container,
+.subject-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.class-card,
+.subject-card {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.class-card:hover,
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.class-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

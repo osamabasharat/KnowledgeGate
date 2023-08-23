@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('classes/', views.class_list, name='class_list'),
     path('classes/<int:class_id>/subjects/', views.subject_list, name='subject_list'),
+    path('topic/<int:topic_id>/', views.topic_detail, name='topic_detail'),
     path('subjects/<int:subject_id>/topics/', views.topic_list, name='topic_list'),
     # path('topics/add/', views.add_topic, name='add_topic'),
     # path('', views.SignupPage, name='signup'),
