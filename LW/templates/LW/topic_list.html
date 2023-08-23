@@ -1,4 +1,49 @@
+{% load static %}
 <!DOCTYPE html>
+<html>
+<head>
+    <title>Topic List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+</head>
+<body>
+    <div class="topic-list-container">
+        {% for topic in topics %}
+            <div class="topic-card">
+                <h2>{{ topic.name }}</h2>
+                <p>{{ topic.subject.name }} - {{ topic.classes.name }}</p>
+                <a href="{% url 'LW:topic_detail' topic.id %}" class="button">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Topic List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'LW/style1.css' %}">
+    
+</head>
+<body>
+    <div class="topic-list-container">
+        {% for topic in topics %}
+            <div class="topic-card">
+                <h2>{{ topic.name }}</h2>
+                <p>{{ topic.subject.name }} - {{ topic.classes.name }}</p>
+                <div class="topic-content">
+                    <p>{{ topic.content }}</p>
+                </div>
+                {% if topic.image %}
+                    <img src="{{ topic.image.url }}" alt="{{ topic.name }}">
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html> {% endcomment %}
+
+{% comment %} <!DOCTYPE html>
 <html>
 <head>
     <title>Topic List</title>
@@ -15,4 +60,4 @@
         {% endfor %}
     </ul>
 </body>
-</html>
+</html> {% endcomment %}
