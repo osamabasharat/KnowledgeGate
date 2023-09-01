@@ -3,9 +3,10 @@
 <html>
 <head>
     <title>Topic List</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'LW/topiclist.css' %}">
 </head>
 <body>
+    {% block content %}
     <div class="topic-list-container">
         {% for topic in topics %}
             <div class="topic-card">
@@ -15,8 +16,34 @@
             </div>
         {% endfor %}
     </div>
+    {% endblock %}
 </body>
 </html>
+    {% comment %} <div class="container">
+        <h1 class="text-center my-5">Topic List</h1>
+        <div class="row">
+            {% for topic in topics %}
+                <div class="col-md-4 mb-4">
+                    <div class="topic-card">
+                        <h2>{{ topic.name }}</h2>
+                        <p>{{ topic.subject.name }} - {{ topic.classes.name }}</p>
+                        <a href="{% url 'LW:topic_detail' topic.id %}" class="btn btn-primary btn-block">View Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div> {% endcomment %}
+    {% comment %} <div class="topic-list-container">
+        {% for topic in topics %}
+            <div class="topic-card">
+                <h2>{{ topic.name }}</h2>
+                <p>{{ topic.subject.name }} - {{ topic.classes.name }}</p>
+                <a href="{% url 'LW:topic_detail' topic.id %}" class="button">View Details</a>
+            </div>
+        {% endfor %}
+    </div> {% endcomment %}
+{% comment %} </body>
+</html> {% endcomment %}
 
 {% comment %} <!DOCTYPE html>
 <html>

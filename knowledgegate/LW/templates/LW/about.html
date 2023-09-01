@@ -1,0 +1,25 @@
+{% extends 'LW/base.html' %}
+{% load static %}
+{% block page_links %}
+<link rel="stylesheet" href="{% static 'LW/style.css' %}">
+{% endblock  %}
+{% block page_title %}
+About Us
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="about-content">
+    <p>{{ about_info.content|safe }}</p>
+    {% if about_info.image %}
+    <div class="image-container">
+      <img src="{{ about_info.image.url }}" alt="About Us Image">
+    </div>
+    {% endif %}
+    <div class="about-text">
+      <p>{{ about_info.right_text|safe }}</p>
+    </div>
+  </div>
+</div>
+{% include "LW/footer.html" %}
+{% endblock %}

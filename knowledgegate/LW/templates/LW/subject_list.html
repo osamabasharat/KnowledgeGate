@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'LW/style1.css' %}">
 </head>
 <body>
+    {% block content %}
     <div class="subject-list-container">
         {% for subject in subjects %}
             <div class="subject-card">
@@ -14,5 +15,6 @@
             </div>
         {% endfor %}
     </div>
+    {% endblock %}
 </body>
 </html>

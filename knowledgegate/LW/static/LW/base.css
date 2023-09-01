@@ -1,0 +1,51 @@
+/* Add this CSS to your existing CSS file or create a new CSS file */
+/* You can adjust the background color and other styles as needed */
+
+/* Set the background color for the entire page */
+body {
+  background-color: #FFF0E5;
+  margin: 0; /* Remove default margin to fill the entire screen */
+  padding: 0; /* Remove default padding to fill the entire screen */
+}
+
+/* Customize the appearance of the navigation bar */
+.navbar {
+  background-color: #FFF0E5;
+  /* background-color: transparent;  */
+  border: none; /* Remove border */
+}
+
+/* Customize the dropdown menu appearance */
+.navbar .dropdown-menu {
+  background-color: #FFF0E5;
+  border: none;
+  box-shadow: none;
+}
+
+/* Customize the appearance of dropdown items */
+.navbar .dropdown-item {
+  color: #000; /* Adjust text color */
+}
+
+/* Change the color of dropdown items on hover */
+.navbar .dropdown-item:hover {
+  background-color: #F9C7B7; /* Adjust hover background color */
+  color: #000; /* Adjust hover text color */
+}
+
+/* Customize the appearance of dropdown toggles */
+.navbar .dropdown-toggle {
+  color: #000; /* Adjust toggle text color */
+}
+
+/* Change the color of dropdown toggles on hover */
+.navbar .dropdown-toggle:hover {
+  color: #000; /* Adjust hover text color */
+}
+
+/* Set the content area to be centered on the page */
+.container {
+  max-width: 100%;
+  padding: 20px;
+  margin: auto;
+}

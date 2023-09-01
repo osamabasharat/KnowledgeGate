@@ -1,53 +1,39 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    {% comment %} <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0"> {% endcomment %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <link rel="stylesheet"  href="{% static 'LW/style.css' %}">
-    <title> {% block  page_title %} Knowledge Gate {% endblock %}  </title>
-    {% block page_links %} {% endblock  %}
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'LW/signup.css' %}">
 </head>
 <body>
-    <div class="hr-theme-slash-2">
-        <div class="hr-line"></div>
-        <i class="material-icons" style="font-family:  Agency FB;
-          font-size: 25px; color: black;">LOGIN</i>
-        <div class="hr-line"></div>
-      </div>
-      
-      <div class="container">
-          <h1 class="text-center" style="font-family: Agency FB; font-size: 25px; color: black;"><strong>I'M ALREADY A CLIENT </strong></h1><br>
-      <div class="col-lg-8 m-auto d-block">
-                  <form class="bg-light" action="#" onsubmit=" return validation()">
-                      <div class="form-group">
-                  <label style="font-family:  Agency FB;
-          font-size: 25px; color: black;"> Email:</label>
-                  <input type="text" name="user" id="emailid" class="form-control" autocomplete="off">
-                  <span id="emailids" class="text-danger font-weigth-bold"></span>
-              
-          </div>
-          <div class="form-group">
-                  <label style="font-family:  Agency FB;
-          font-size: 25px; color: black;">Password:</label>
-                  <input type="text" name="user" id="password" class="form-control" autocomplete="off">
-                  <span id="passwordid" class="text-danger font-weigth-bold"></span>
-              
-          </div>
-          <p><a href="" style="color: black;">Forgotten Your Password?</a>or<a href="" style="color: black;">Return to store</a></p>
-              <input type="submit" name="submit" value="LOG IN" class="btn  button btn-block m-auto" style="text-decoration: none;font-family: Agency FB; font-size: 25px; padding-top:10px;">
-              
-                  </form>
-                  <h6 class="text-center" style="font-family: Agency FB; font-size: 20px; color: black;">I'M NEW</h6><br>
-                  <h3 class="text-center" style="font-family: Agency FB;  color: black;">Create an account with just a couple of details and you’ll be able to process your order faster and find out about the latest trends and promotions by email!</h3><br>
-                  <a href="SignUp.html" class="button btn-block" style="text-decoration: none; font-family: 25px; padding: 10px; margin-top: 10px;">SIGN UP</a>
-          </div>
-      </div>
+    {% block content %}
+    <div class="container">
+        <h2>Login</h2>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p><a href="{% url 'signup' %}">Don't have an account? Signup here</a></p>
+    </div>
+    {% endblock %}
 </body>
 </html>
+
+
