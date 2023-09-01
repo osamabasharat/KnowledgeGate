@@ -1,0 +1,38 @@
+{% extends 'LW/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>Class Detail</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'LW/class_detail.css' %}">
+
+  {% comment %} <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0"> {% endcomment %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <title>{% block page_title %}Knowledge Gate{% endblock %}</title>
+ 
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="class-detail">
+            <h1>Class Detail: {{ class.name }}</h1>
+            <p>{{ class.description }}</p>
+            
+            <h2>Subjects</h2>
+            <ul class="subject-list">
+                {% for subject in class.subject_set.all %}
+                    <li><a href="{% url 'subject_detail' subject.id %}">{{ subject.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

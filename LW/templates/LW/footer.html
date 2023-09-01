@@ -15,6 +15,7 @@
 
 </head>
 <body>
+  {% block content %}
     <div class="b-example-divider"></div>
 
     <div class="container">
@@ -40,17 +41,17 @@
         </div>
     
         <div class="col">
-          <h5>Section</h5>
+          <h5>Company</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Catalogue</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:home' %}" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:about' %}" class="nav-link p-0 text-muted">About</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:class_list' %}" class="nav-link p-0 text-muted">Catalogue</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:faqs' %}" class="nav-link p-0 text-muted">FAQs</a></li>
            
           </ul>
         </div>
     
-        <div class="col">
+        {% comment %} <div class="col">
           <h5>Courses</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mathematics</a></li>
@@ -60,25 +61,27 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chemistry</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Biology</a></li>
           </ul>
-        </div>
+        </div> {% endcomment %}
     
         <div class="col">
-          <h5>Setions</h5>
+          <h5>Classes</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Class 7th</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Class 8th</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Class 9th</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Class 10th</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Class 11th</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Class 12th</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:class_list' %}" class="nav-link p-0 text-muted">Class 7th</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:class_list' %}" class="nav-link p-0 text-muted">Class 8th</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:class_list' %}" class="nav-link p-0 text-muted">Class 9th</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:class_list' %}" class="nav-link p-0 text-muted">Class 10th</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:class_list' %}" class="nav-link p-0 text-muted">Class 11th</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'LW:class_list' %}" class="nav-link p-0 text-muted">Class 12th</a></li>
           </ul>
         </div>
       </footer>
     </div>
+    
     {% comment %} <hr>
 <div class="font" style="float: right;">
   <p style="padding-left: 10px; padding-right: 10px;  margin-left: 10px; font-size: 20px;">Follow us on<i class="fa fa-facebook-square" style="padding-left: 10px; padding-right: 10px;  margin-left: 10px; font-size: 25px;"></i><i class="fa fa-pinterest-square" style="padding-left: 10px; padding-right: 10px;  margin-left: 10px; font-size: 25px;"></i><i class="fa fa-youtube-square" style="padding-left: 10px; padding-right: 10px;  margin-left: 10px; font-size: 25px;"></i><i class="fa fa-twitter-square" style="padding-left: 10px; padding-right: 10px;  margin-left: 10px; font-size: 25px;"></i><i class="  fa fa-instagram" style="padding-left: 10px; padding-right: 10px;  margin-left: 10px; font-size: 25px;"></i></p> {% endcomment %}
   
 </div>
+{% endblock %}
 </body>
 </html>

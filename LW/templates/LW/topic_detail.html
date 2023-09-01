@@ -3,20 +3,39 @@
 <html>
 <head>
     <title>Topic Detail</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'LW/topicdetail.css' %}">
 </head>
 <body>
-    <div class="topic-detail-container">
+    {% block content %}
+    <div class="topic-detail-container-fluid">
         <div class="topic-detail">
             <h2>{{ selected_topic.name }}</h2>
             <p>{{ selected_topic.subject.name }} - {{ selected_topic.classes.name }}</p>
             <div class="topic-content">
-                <p>{{ selected_topic.content }}</p>
+                {{ selected_topic.content|safe }}
+                {% comment %} <p>{{ selected_topic.points|safe }}</p> {% endcomment %}
+            </div> 
+            {% if selected_topic.pdf_file %}
+            <div class="pdf-link">
+            <a href="{{ selected_topic.pdf_file.url }}" target="_blank" Download>
+            Download PDF
+            </a>
             </div>
-            {% if selected_topic.image %}
-                <img src="{{ selected_topic.image.url }}" alt="{{ selected_topic.name }}">
             {% endif %}
+            {% if selected_topic.image %}
+                <img src="{{selected_topic.image.url}}" alt="{{ selected_topic.name }}">
+            {% endif %}
+            {% for topic_image in selected_topic.topicimage_set.all %}
+            <img src="{{ topic_image.image.url }}" alt="Topic Image" class="topic-image">
+            {% endfor %}
+            <div class="topic-content">
+                {% comment %} {{ selected_topic.content|safe }} {% endcomment %}
+                <p>{{ selected_topic.points|safe }}</p>
+            </div> 
+
+        
         </div>
     </div>
+    {% endblock %}
 </body>
 </html>
